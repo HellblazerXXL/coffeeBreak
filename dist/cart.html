@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<!-- Create a simple e-commerce website with cart system.
+It should have the following:
+1. A list of products (you can use array)
+2. User should be able to add to cart
+3. User can update an item in the cart
+4. User can remove an item from cart
+5. User can clear the cart
+
+The UI should be very good.
+
+Use localStorage for the cart. -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Break</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
+</head>
+<body class="bg-white">
+    <header class="bg-[url('/dist/img/holderset.jpg')] bg-cover pb-96">
+        <nav class="bg-orange-900 text-white flex justify-between items-center mx-4 mt-3 mb-20 rounded-md shadow-md px-2 py-2">
+            <div class="text-2xl font-bold flex"><span>CoffeeBreak</span><img src="/dist/img/coffee-2551955_1280.png" alt="logo" class="w-8"></div>
+
+            <div class="flex gap-3">
+               <div class="space-x-1 items-center text-xl font-bold"><span class="align-middle">Login</span><i class='bx  bx-user align-middle'></i></div>
+            </div>
+        </nav>
+
+        <div class="text-center text-5xl font-bold text-white bg-orange-900 py-3 mx-10 rounded-md"><span>Cart</span></div>
+    </header>
+
+    <div class="bg-[url('dist/img/mike-kenneally-zlwDJoKTuA8-unsplash.jpg')]"></div>
+
+    <main>
+        <div class="bg-yellow-800 py-2">
+            <div class="bg-orange-900 mx-2 py-2 shadow-xl rounded-md">
+                <div>
+                    <div class="bg-white mx-4 py-1 px-1 rounded-md flex justify-between">
+                        <div class="flex">
+                            <div><img src="/dist/img/ceyda-ciftci-nNjxgeGuzAs-unsplash.jpg" alt="" class="rounded-xl w-20 h-20 px-1 py-1"></div>
+                        <div>
+                        <p class="font-bold text-sm text-orange-900">Express to Go</p>
+                        <div">
+                            <p class="font-bold text-sm text-orange-900">#1,200</p>
+                        </div>
+                        </div>
+                        <div class="items-end"><button class="text-white bg-orange-900 px-2 py-1 rounded-md">Delete</button></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-orange-900 text-white px-3 mt-5">
+        <div>
+            <div class="text-2xl font-bold flex py-3"><span>CoffeeBreak</span><img src="/dist/img/coffee-2551955_1280.png" alt="logo" class="w-8"></div>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <hr class="mx-5 my-2">
+                <div class="text-center">
+                    <p>&copy; 2025 Msughter Apera <a href="https://github.com/HellblazerXXL" class="font-bold">github</a> @Blockfuse Labs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
