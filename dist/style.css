@@ -559,11 +559,6 @@ video {
   margin-right: 2.5rem;
 }
 
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
-}
-
 .mx-3 {
   margin-left: 0.75rem;
   margin-right: 0.75rem;
@@ -577,6 +572,11 @@ video {
 .mx-5 {
   margin-left: 1.25rem;
   margin-right: 1.25rem;
+}
+
+.mx-8 {
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
 
 .my-2 {
@@ -625,44 +625,20 @@ video {
   width: 5rem;
 }
 
-.w-11 {
-  width: 2.75rem;
-}
-
-.w-1 {
-  width: 0.25rem;
-}
-
-.w-10 {
-  width: 2.5rem;
-}
-
 .w-8 {
   width: 2rem;
-}
-
-.w-4 {
-  width: 1rem;
-}
-
-.w-2 {
-  width: 0.5rem;
-}
-
-.items-end {
-  align-items: flex-end;
 }
 
 .items-center {
   align-items: center;
 }
 
-.justify-center {
-  justify-content: center;
-}
-
 .justify-between {
   justify-content: space-between;
+}
+
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-3 {
@@ -705,6 +681,11 @@ video {
   background-color: rgb(254 215 170 / var(--tw-bg-opacity, 1));
 }
 
+.bg-orange-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 186 116 / var(--tw-bg-opacity, 1));
+}
+
 .bg-orange-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(124 45 18 / var(--tw-bg-opacity, 1));
@@ -715,29 +696,16 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-yellow-800 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(133 77 14 / var(--tw-bg-opacity, 1));
+.bg-\[url\(\'\/coffeeBreak\/dist\/img\/holderset\.jpg\'\)\] {
+  background-image: url('/coffeeBreak/dist/img/holderset.jpg');
 }
 
-.bg-\[url\(\'\/dist\/img\/mike-kenneally-zlwDJoKTuA8-unsplash\.jpg\'\)\] {
-  background-image: url('/dist/img/mike-kenneally-zlwDJoKTuA8-unsplash.jpg');
+.bg-\[url\(\'\/coffeeBreak\/dist\/img\/mike-kenneally-zlwDJoKTuA8-unsplash\.jpg\'\)\] {
+  background-image: url('/coffeeBreak/dist/img/mike-kenneally-zlwDJoKTuA8-unsplash.jpg');
 }
 
-.bg-\[url\(\'\/dist\/img\/petr-sevcovic-qE1jxYXiwOA-unsplash\.jpg\'\)\] {
-  background-image: url('/dist/img/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg');
-}
-
-.bg-\[url\(\'dist\/img\/holderset\.jpg\'\)\] {
-  background-image: url('dist/img/holderset.jpg');
-}
-
-.bg-\[url\(\'dist\/img\/mike-kenneally-zlwDJoKTuA8-unsplash\.jpg\'\)\] {
-  background-image: url('dist/img/mike-kenneally-zlwDJoKTuA8-unsplash.jpg');
-}
-
-.bg-\[url\(\'\/dist\/img\/holderset\.jpg\'\)\] {
-  background-image: url('/dist/img/holderset.jpg');
+.bg-\[url\(\'\/coffeeBreak\/dist\/img\/petr-sevcovic-qE1jxYXiwOA-unsplash\.jpg\'\)\] {
+  background-image: url('/coffeeBreak/dist/img/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg');
 }
 
 .bg-cover {
@@ -784,9 +752,19 @@ video {
   padding-bottom: 0.75rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .py-52 {
   padding-top: 13rem;
   padding-bottom: 13rem;
+}
+
+.py-10 {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
 }
 
 .pb-36 {
@@ -809,16 +787,8 @@ video {
   text-align: right;
 }
 
-.align-top {
-  vertical-align: top;
-}
-
 .align-middle {
   vertical-align: middle;
-}
-
-.align-bottom {
-  vertical-align: bottom;
 }
 
 .text-2xl {
@@ -880,7 +850,16 @@ video {
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
+.filter {
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+}
+
 @media (min-width: 768px) {
+  .md\:mx-8 {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -888,6 +867,11 @@ video {
   .md\:px-4 {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .md\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
 
   .md\:pb-96 {
@@ -917,9 +901,5 @@ video {
 
   .lg\:pb-\[500px\] {
     padding-bottom: 500px;
-  }
-
-  .lg\:align-top {
-    vertical-align: top;
   }
 }

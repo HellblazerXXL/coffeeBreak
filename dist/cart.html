@@ -19,9 +19,9 @@ Use localStorage for the cart. -->
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
 <body class="bg-white">
-    <header class="bg-[url('/dist/img/holderset.jpg')] bg-cover pb-96">
+    <header class="bg-[url('/coffeeBreak/dist/img/holderset.jpg')] bg-cover pb-96">
         <nav class="bg-orange-900 text-white flex justify-between items-center mx-4 mt-3 mb-20 rounded-md shadow-md px-2 py-2">
-            <div class="text-2xl font-bold flex"><span>CoffeeBreak</span><img src="/dist/img/coffee-2551955_1280.png" alt="logo" class="w-8"></div>
+            <div class="text-2xl font-bold flex"><span><a href="/coffeeBreak/dist/index.html">CoffeeBreak</a></span><img src="/coffeeBreak/dist/img/coffee-2551955_1280.png" alt="logo" class="w-8"></div>
 
             <div class="flex gap-3">
                <div class="space-x-1 items-center text-xl font-bold"><span class="align-middle">Login</span><i class='bx  bx-user align-middle'></i></div>
@@ -31,32 +31,16 @@ Use localStorage for the cart. -->
         <div class="text-center text-5xl font-bold text-white bg-orange-900 py-3 mx-10 rounded-md"><span>Cart</span></div>
     </header>
 
-    <div class="bg-[url('dist/img/mike-kenneally-zlwDJoKTuA8-unsplash.jpg')]"></div>
+    <div class="bg-[url('/coffeeBreak/dist/img/mike-kenneally-zlwDJoKTuA8-unsplash.jpg')]"></div>
 
     <main>
-        <div class="bg-yellow-800 py-2">
-            <div class="bg-orange-900 mx-2 py-2 shadow-xl rounded-md">
-                <div>
-                    <div class="bg-white mx-4 py-1 px-1 rounded-md flex justify-between">
-                        <div class="flex">
-                            <div><img src="/dist/img/ceyda-ciftci-nNjxgeGuzAs-unsplash.jpg" alt="" class="rounded-xl w-20 h-20 px-1 py-1"></div>
-                        <div>
-                        <p class="font-bold text-sm text-orange-900">Express to Go</p>
-                        <div">
-                            <p class="font-bold text-sm text-orange-900">#1,200</p>
-                        </div>
-                        </div>
-                        <div class="items-end"><button class="text-white bg-orange-900 px-2 py-1 rounded-md">Delete</button></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="bg-orange-300 py-4 grid gap-2 md:grid-cols-2 lg:grid-cols-3" id="cart">
         </div>
     </main>
     
     <footer class="bg-orange-900 text-white px-3 mt-5">
         <div>
-            <div class="text-2xl font-bold flex py-3"><span>CoffeeBreak</span><img src="/dist/img/coffee-2551955_1280.png" alt="logo" class="w-8"></div>
+            <div class="text-2xl font-bold flex py-3"><span>CoffeeBreak</span><img src="/coffeeBreak/dist/img/coffee-2551955_1280.png" alt="logo" class="w-8"></div>
             <div>
                 <ul>
                     <li><a href="#">Home</a></li>
@@ -73,6 +57,64 @@ Use localStorage for the cart. -->
             </div>
         </div>
     </footer>
-    
+
+    <script>
+let carItems = JSON.parse(localStorage.getItem("productData")) || [];
+
+let cartContainer = document.getElementById("cart");
+
+function renderCart() {
+
+    if (carItems.length === 0) {
+        cartContainer.innerHTML = `
+            <div class="text-center py-10 text-orange-900 font-bold text-xl">
+                🛒 Your cart is empty.
+            </div>`;
+        return;
+    }
+
+    let empty = "";
+
+    carItems.forEach(item => {
+        empty += `
+            <div class="bg-orange-900 mx-8 py-2 shadow-xl rounded-md md:py-8">
+                <div class="bg-white mx-4 py-1 px-1 rounded-md flex justify-between md:mx-8">
+                    <div class="flex">
+                        <div>
+                            <img src="${item.productImage}" alt=""
+                                class="rounded-xl w-20 h-20 px-1 py-1">
+                        </div>
+                        <div>
+                            <p class="font-bold text-sm text-orange-900">${item.productName}</p>
+                            <p class="font-bold text-sm text-orange-900">${item.price}</p>
+                        </div>
+                    </div>
+
+                    <div>
+                        <button 
+                            class="del text-white bg-orange-900 px-2 py-1 rounded-md" 
+                            data-id="${item.productId}">
+                            Delete
+                        </button>
+                    </div>
+                </div>
+            </div>`;
+    });
+
+    cartContainer.innerHTML = empty;
+
+    document.querySelectorAll(".del").forEach(button => {
+        button.addEventListener("click", function () {
+            let productIdToDelete = parseInt(this.getAttribute("data-id"));
+            carItems = carItems.filter(item => item.productId !== productIdToDelete);
+            localStorage.setItem("productData", JSON.stringify(carItems));
+            renderCart(); 
+        });
+    });
+}
+
+renderCart();
+</script>
+
 </body>
 </html>
