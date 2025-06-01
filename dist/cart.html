@@ -36,6 +36,11 @@ Use localStorage for the cart. -->
     <main>
         <div class="bg-orange-300 py-4 grid gap-2 md:grid-cols-2 lg:grid-cols-3" id="cart">
         </div>
+
+        <div class="space-x-2 mt-3 pl-3">
+            <button class="bg-orange-900 text-white px-2 py-1 rounded-md font-bold shadow-md hover:bg-orange-400">Checkout</button>
+            <button class="bg-orange-900 text-white px-2 py-1 rounded-md font-bold shadow-2xl hover:bg-red-700" id="clear">Clear Cart</button>
+        </div>
     </main>
     
     <footer class="bg-orange-900 text-white px-3 mt-5">
@@ -61,14 +66,19 @@ Use localStorage for the cart. -->
     <script>
 let carItems = JSON.parse(localStorage.getItem("productData")) || [];
 
+carItems = carItems.map(item => {
+    if (!item.quantity) item.quantity = 1;
+    return item;
+});
+
 let cartContainer = document.getElementById("cart");
 
-function renderCart() {
+function generateCart() {
 
     if (carItems.length === 0) {
         cartContainer.innerHTML = `
-            <div class="text-center py-10 text-orange-900 font-bold text-xl">
-                🛒 Your cart is empty.
+            <div class="text-center py-10 text-orange-900 font-bold text-3xl">
+                <p>🛒 Your cart is empty.</p>
             </div>`;
         return;
     }
@@ -86,18 +96,29 @@ function renderCart() {
                         </div>
                         <div>
                             <p class="font-bold text-sm text-orange-900">${item.productName}</p>
-                            <p class="font-bold text-sm text-orange-900">${item.price}</p>
+                            <p class="font-bold text-sm text-orange-900">₦${item.price}</p>
+                            <div class="buttons flex justify-between items-center gap-3" data-id="${item.productId}"> 
+                                <i class='bx bx-minus-circle cursor-pointer'></i> 
+                                <div class="quantity">${item.quantity}</div> 
+                                <i class='bx bx-plus-circle cursor-pointer'></i> 
+                            </div>
+                            <p class="totalPrice font-bold text-xl" id="${item.productId}">₦${item.quantity * item.price}</p>
+
                         </div>
                     </div>
 
                     <div>
                         <button 
-                            class="del text-white bg-orange-900 px-2 py-1 rounded-md" 
+                            class="del text-white bg-orange-900 px-2 py-1 rounded-md hover:bg-orange-400" 
                             data-id="${item.productId}">
                             Delete
                         </button>
                     </div>
+
+                    
                 </div>
+
+                
             </div>`;
     });
 
@@ -108,12 +129,52 @@ function renderCart() {
             let productIdToDelete = parseInt(this.getAttribute("data-id"));
             carItems = carItems.filter(item => item.productId !== productIdToDelete);
             localStorage.setItem("productData", JSON.stringify(carItems));
-            renderCart(); 
+            generateCart(); 
+        });
+    });
+
+     document.querySelectorAll(".buttons").forEach(container => {
+        let productId = parseInt(container.getAttribute("data-id"));
+        let minusBtn = container.querySelector(".bx-minus-circle");
+        let plusBtn = container.querySelector(".bx-plus-circle");
+        let quantityDiv = container.querySelector(".quantity");
+
+        minusBtn.addEventListener("click", () => {
+            updateQuantity(productId, -1);
+        });
+
+        plusBtn.addEventListener("click", () => {
+            updateQuantity(productId, 1);
         });
     });
 }
 
-renderCart();
+
+function updateQuantity(productId, change) {
+    carItems = carItems.map(item => {
+        if (item.productId === productId) {
+            item.quantity = Math.max(1, item.quantity + change);
+        }
+        return item;
+    });
+    localStorage.setItem("productData", JSON.stringify(carItems));
+    generateCart();
+}
+
+
+function clearCart(){
+    let clear = document.getElementById("clear");
+    clear.addEventListener("click", () => {
+        localStorage.removeItem("productData");
+        carItems = [];
+        generateCart()
+    })
+}
+
+clearCart();
+
+generateCart();
+
 </script>
 
 </body>
