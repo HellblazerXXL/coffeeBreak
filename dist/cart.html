@@ -38,7 +38,7 @@ Use localStorage for the cart. -->
         </div>
 
         <div class="space-x-2 mt-3 pl-3">
-            <button class="bg-orange-900 text-white px-2 py-1 rounded-md font-bold shadow-md hover:bg-orange-400">Checkout</button>
+            <a href="/coffeeBreak/dist/payment.html"><button class="bg-orange-900 text-white px-2 py-1 rounded-md font-bold shadow-md hover:bg-orange-400">Checkout</button></a>
             <button class="bg-orange-900 text-white px-2 py-1 rounded-md font-bold shadow-2xl hover:bg-red-700" id="clear">Clear Cart</button>
         </div>
     </main>
@@ -133,7 +133,7 @@ function generateCart() {
         });
     });
 
-     document.querySelectorAll(".buttons").forEach(container => {
+    document.querySelectorAll(".buttons").forEach(container => {
         let productId = parseInt(container.getAttribute("data-id"));
         let minusBtn = container.querySelector(".bx-minus-circle");
         let plusBtn = container.querySelector(".bx-plus-circle");
