@@ -116,8 +116,9 @@ Use localStorage for the cart. -->
     products.forEach(prod => {
         // let {productImage, productName, price, productId} = prod (We can use this when we dont want to use the dot notation to acess the properties of an object)
         let div = document.createElement("div")
+        div.className="bg-white mx-4 py-3 rounded-md"
         div.innerHTML = `
-                  <div class="bg-white mx-4 py-3 rounded-md">
+                
                 <div class="px-3"><img src="${prod.productImage}" alt="" class="rounded-xl" id="productImage"></div>
                 <div class="mx-3">
                 <p class="font-bold text-xl text-orange-900" id="productName">${prod.productName}</p>
@@ -128,8 +129,7 @@ Use localStorage for the cart. -->
                         <button class="bg-orange-900 py-2 px-4 rounded-md add" id="add">Add to Cart</button>
                     </div>
                 </div>
-                </div>
-            </div>`
+                </div>`
 
             allProducts.appendChild(div);
 
