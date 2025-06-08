@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment</title>
+    <title>Coffee Break</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
 </head>
-<body>
+<body class="bg-orange-200">
+    <header class="bg-[url('mike-kenneally-zlwDJoKTuA8-unsplash.jpg')] bg-cover rounded-md pt-4 pb-36 md:pb-96 mx-4 mt-4 lg:pb-[500px]">
+        <nav class="bg-orange-900 text-white flex justify-between items-center mx-4 my-3 rounded-md shadow-md px-2 py-2 opacity-90 md:px-4 lg:py-4">
+            <div class="text-xl font-bold flex items-center md:text-4xl"><span>CoffeeBreak</span> <img src="img/coffee-2551955_1280.png" alt="" class="w-8"></div>
+
+            <div class="flex gap-3">
+                <div><button><a href="cart.html"><i class='bx  bx-cart align-middle text-2xl'></i></a></button> </div>
+               <div class="space-x-1 items-center  font-medium"><span class="align-middle">Login</span><i class='bx  bx-user align-middle'></i></div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+      <div class="bg-orange-300 py-4 grid gap-2 md:grid-cols-2 lg:grid-cols-3" id="cart">
+
+      </div>
+
+      <div id="paymentCard" class="">
+        <div>
+            <p>Pay with<i class='bxr bx-chevron-left-circle bx-rotate-180'></i> link</p>
+            <p>Or pay with card</p>
+            <form action="" id="form">
+                <div>
+                    <label for="email">Email</label><br>
+                    <input type="email">
+                </div>
+
+                 <div>
+                    <label for="card information">Card information</label><br>
+                    <input type="text"><br>
+                    <input type="date"><input type="text">
+                </div>
+
+                 <div>
+                    <label for="cardholder name">Cardholder name</label><br>
+                    <input type="text">
+                </div>
+
+                 <div>
+                    <label for="country">Country or regio</label><br>
+                    <select name="" id="">
+                        <option value=""></option>
+                    </select>
+                </div>
+
+                 <div>
+                    <label for="email">Email</label><br>
+                    <input type="checkbox"><span></span>
+                </div>
+            </form>
+        </div>
+
+      </div>
+    </main>
     
+    <footer class="bg-orange-900 text-white px-3 mt-5 py-3">
+        <div>
+            <div class="text-2xl font-bold flex items-center md:text-4xl"><span>CoffeeBreak</span> <img src="img/coffee-2551955_1280.png" alt="" class="w-8"></div>
+            <div>
+                <ul class="font-bold">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+            <div>
+                <hr class="mx-5 my-2">
+                <div class="text-center">
+                    <p>&copy; 2025 Msughter Apera <a href="https://github.com/HellblazerXXL" class="font-bold">github</a> @Blockfuse Labs</p>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>

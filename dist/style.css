@@ -722,32 +722,20 @@ video {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity, 1));
 }
 
-.bg-\[url\(\'\/coffeeBreak\/dist\/img\/holderset\.jpg\'\)\] {
-  background-image: url('/coffeeBreak/dist/img/holderset.jpg');
+.bg-\[url\(\'\/coffeeBreak\/dist\/img\/img\/mike-kenneally-zlwDJoKTuA8-unsplash\.jpg\'\)\] {
+  background-image: url('/coffeeBreak/dist/img/img/mike-kenneally-zlwDJoKTuA8-unsplash.jpg');
 }
 
-.bg-\[url\(\'\/coffeeBreak\/dist\/img\/mike-kenneally-zlwDJoKTuA8-unsplash\.jpg\'\)\] {
-  background-image: url('/coffeeBreak/dist/img/mike-kenneally-zlwDJoKTuA8-unsplash.jpg');
+.bg-\[url\(\'img\/holderset\.jpg\'\)\] {
+  background-image: url('img/holderset.jpg');
 }
 
-.bg-\[url\(\'\/coffeeBreak\/dist\/img\/petr-sevcovic-qE1jxYXiwOA-unsplash\.jpg\'\)\] {
-  background-image: url('/coffeeBreak/dist/img/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg');
+.bg-\[url\(\'img\/petr-sevcovic-qE1jxYXiwOA-unsplash\.jpg\'\)\] {
+  background-image: url('img/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg');
 }
 
-.bg-\[url\(\'\/coffeeBreak\/dist\/img\\\/mike-kenneally-zlwDJoKTuA8-unsplash\.jpg\'\)\] {
-  background-image: url('/coffeeBreak/dist/img\/mike-kenneally-zlwDJoKTuA8-unsplash.jpg');
-}
-
-.bg-\[url\(\'\/coffeeBreak\/dist\/mike-kenneally-zlwDJoKTuA8-unsplash\.jpg\'\)\] {
-  background-image: url('/coffeeBreak/dist/mike-kenneally-zlwDJoKTuA8-unsplash.jpg');
-}
-
-.bg-\[url\(\'\/coffeeBreak\/dist\/petr-sevcovic-qE1jxYXiwOA-unsplash\.jpg\'\)\] {
-  background-image: url('/coffeeBreak/dist/petr-sevcovic-qE1jxYXiwOA-unsplash.jpg');
-}
-
-.bg-\[url\(\'\/coffeeBreak\/dist\/holderset\.jpg\'\)\] {
-  background-image: url('/coffeeBreak/dist/holderset.jpg');
+.bg-\[url\(\'mike-kenneally-zlwDJoKTuA8-unsplash\.jpg\'\)\] {
+  background-image: url('mike-kenneally-zlwDJoKTuA8-unsplash.jpg');
 }
 
 .bg-cover {
