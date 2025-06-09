@@ -24,38 +24,40 @@
 
       </div>
 
-      <div id="paymentCard" class="">
-        <div>
-            <p>Pay with<i class='bxr bx-chevron-left-circle bx-rotate-180'></i> link</p>
-            <p>Or pay with card</p>
+      <div id="paymentCard" class="grid md:grid-cols-2">
+        <div class=" mx-4 space-y-5">
+            <p class="text-center bg-green-500 py-2 rounded-md">Pay with <i class='bxr bx-chevron-left-circle bx-rotate-180 align-middle'></i> <span class="font-bold">link</span></p>
+            <p class="text-center">Or pay with card</p>
             <form action="" id="form">
                 <div>
                     <label for="email">Email</label><br>
-                    <input type="email">
+                    <input type="email" id="email" class="rounded-md py-2 px-1">
                 </div>
 
                  <div>
-                    <label for="card information">Card information</label><br>
-                    <input type="text"><br>
-                    <input type="date"><input type="text">
+                    <label for="cardInformation">Card information</label><br>
+                    <input type="text" class="rounded-md py-2 px-1"><br>
+                    <input type="date" class="rounded-md py-2 px-1"><input type="text" id="cardInformation" class="rounded-md py-2 px-1">
                 </div>
 
                  <div>
-                    <label for="cardholder name">Cardholder name</label><br>
-                    <input type="text">
+                    <label for="cardholdername">Cardholder name</label><br>
+                    <input type="text" id="cardholdername" class="rounded-md py-2 px-1">
                 </div>
 
                  <div>
-                    <label for="country">Country or regio</label><br>
-                    <select name="" id="">
+                    <label for="country">Country or region</label><br>
+                    <select name="" id="country" class="rounded-md py-2 px-1">
                         <option value=""></option>
                     </select>
                 </div>
 
                  <div>
-                    <label for="email">Email</label><br>
-                    <input type="checkbox"><span></span>
+                    <label for="checkbox">Email</label><br>
+                    <input type="checkbox" id="checkbox"><span></span>
                 </div>
+
+                <button type="submit" class="text-center bg-blue-500 px-7 w-full rounded-md py-2"> Pay</button>
             </form>
         </div>
 
